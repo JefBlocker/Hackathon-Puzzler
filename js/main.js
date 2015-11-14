@@ -20,6 +20,12 @@ import PuzzleService from './services/puzzle.service';
 
 angular
   .module('app', ['ui.router', 'ngCookies', 'ui.sortable'])
+  .constant('SERVER', {
+    URL: 'www.google.com',
+    CONFIG: {
+      headers: {}
+    }
+  })
   .config(config)
   .controller('CreateAccountController', CreateAccountController)
   .controller('CreatePuzzleController', CreatePuzzleController)
@@ -29,7 +35,7 @@ angular
   .controller('PuzzleController', PuzzleController)
   .controller('GameController', GameController)
   .controller('WelcomeController', WelcomeController)
-  .service('UserService', PlayerService)
+  .service('UserService', UserService)
   .service('GameService', GameService)
   .service('PuzzleService', PuzzleService)
 ;
