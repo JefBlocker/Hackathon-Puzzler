@@ -1,1 +1,7 @@
 <h2>Log In Page</h2>
+
+<form ng-submit="login(user)">
+  <input placeholder="Username" ng-model="user.user">
+  <input placeholder="Password" ng-model="user.pass" type="password">
+  <button>Login</button>
+</form>
