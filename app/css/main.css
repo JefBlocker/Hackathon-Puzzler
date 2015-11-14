@@ -6395,4 +6395,27 @@ body {
   width: 600px;
   margin: 20px auto; }
 
+#gameboard {
+  border: 1px solid black;
+  position: relative;
+  height: 100px;
+  width: 30%;
+  float: right; }
+
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 450px; }
+
+#sortable li {
+  margin: 3px 3px 3px 0;
+  padding: 1px;
+  float: left;
+  width: 100px;
+  height: 90px;
+  font-size: 4em;
+  text-align: center;
+  border: 1px solid black; }
+
 /*# sourceMappingURL=main.css.map */
