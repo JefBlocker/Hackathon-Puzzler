@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
+import 'angular-ui-sortable';
 
 import config from './config';
 
@@ -18,7 +19,7 @@ import GameService from './services/game.service';
 import PuzzleService from './services/puzzle.service';
 
 angular
-  .module('app', ['ui.router', 'ngCookies'])
+  .module('app', ['ui.router', 'ngCookies', 'ui.sortable'])
   .config(config)
   .controller('CreateAccountController', CreateAccountController)
   .controller('CreatePuzzleController', CreatePuzzleController)

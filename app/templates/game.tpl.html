@@ -1,1 +1,7 @@
 <h2>Game Page</h2>
+
+<div id="gameboard">
+  <ul ui-sortable="puzzles" ng-model="puzzles" id="sortable">
+    <li ng-repeat="item in puzzles" class="ui-state-default">{{ item }}</li>
+  </ul>
+</div>
