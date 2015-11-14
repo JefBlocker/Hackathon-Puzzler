@@ -118,9 +118,16 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LoginController = function LoginController($scope) {};
+var LoginController = function LoginController($scope, UserService, $cookies, $state) {
 
-LoginController.$inject = ['$scope'];
+  $scope.login = function (user) {
+    UserService.sendLogin(user).then(function (res) {
+      UserService.loginSuccess(res);
+    });
+  };
+};
+
+LoginController.$inject = ['$scope', 'UserService', '$cookies', '$state'];
 
 exports['default'] = LoginController;
 module.exports = exports['default'];
@@ -212,7 +219,12 @@ var _servicesPuzzleService = require('./services/puzzle.service');
 
 var _servicesPuzzleService2 = _interopRequireDefault(_servicesPuzzleService);
 
-_angular2['default'].module('app', ['ui.router', 'ngCookies']).config(_config2['default']).controller('CreateAccountController', _controllersCreateAccountController2['default']).controller('CreatePuzzleController', _controllersCreatePuzzleController2['default']).controller('ProfileController', _controllersMyPuzzlesController2['default']).controller('LeadersController', _controllersLeadersController2['default']).controller('LoginController', _controllersLoginController2['default']).controller('PuzzleController', _controllersDisplayPuzzlesController2['default']).controller('GameController', _controllersGameController2['default']).controller('WelcomeController', _controllersWelcomeController2['default']).service('UserService', PlayerService).service('GameService', _servicesGameService2['default']).service('PuzzleService', _servicesPuzzleService2['default']);
+_angular2['default'].module('app', ['ui.router', 'ngCookies']).constant('SERVER', {
+  URL: 'www.google.com',
+  CONFIG: {
+    headers: {}
+  }
+}).config(_config2['default']).controller('CreateAccountController', _controllersCreateAccountController2['default']).controller('CreatePuzzleController', _controllersCreatePuzzleController2['default']).controller('ProfileController', _controllersMyPuzzlesController2['default']).controller('LeadersController', _controllersLeadersController2['default']).controller('LoginController', _controllersLoginController2['default']).controller('PuzzleController', _controllersDisplayPuzzlesController2['default']).controller('GameController', _controllersGameController2['default']).controller('WelcomeController', _controllersWelcomeController2['default']).service('UserService', _servicesUserService2['default']).service('GameService', _servicesGameService2['default']).service('PuzzleService', _servicesPuzzleService2['default']);
 
 },{"./config":1,"./controllers/createAccount.controller":2,"./controllers/createPuzzle.controller":3,"./controllers/displayPuzzles.controller":4,"./controllers/game.controller":5,"./controllers/leaders.controller":6,"./controllers/login.controller":7,"./controllers/myPuzzles.controller":8,"./controllers/welcome.controller":9,"./services/game.service":11,"./services/puzzle.service":12,"./services/user.service":13,"angular":18,"angular-cookies":15,"angular-ui-router":16}],11:[function(require,module,exports){
 "use strict";
@@ -246,7 +258,10 @@ module.exports = exports["default"];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var UserService = function UserService() {};
+var UserService = function UserService($http, SERVER, $cookies, $state) {
+
+  console.log(SERVER);
+};
 
 UserService.$inject = [];
 

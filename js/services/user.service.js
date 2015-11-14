@@ -1,4 +1,6 @@
-let UserService = function() {
+let UserService = function($http, SERVER, $cookies, $state) {
+
+  console.log(SERVER);
   
   
 
